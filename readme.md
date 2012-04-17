@@ -10,7 +10,9 @@ window.onkeyup( function() {
 ```
 
 ### Element.getShortcode()
+
 Return: NULL|Object
+
 The Object consists of
 * string Object.name
 * object Object.attr (Optional)
