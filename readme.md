@@ -14,6 +14,6 @@ window.onkeyup( function() {
 Return: NULL|Object
 
 The Object consists of
-* string Object.name
-* object Object.attr (Optional)
-* string Object.content (Optional)
+ * string Object.name
+ * object Object.attr (Optional)
+ * string Object.content (Optional)
