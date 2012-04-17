@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8" />
+	<title>JS Shortcode Parser</title>
+	<script type="text/javascript" src="../js/parser.js"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+
+			var el = document.getElementById( 'canvas' );
+			el.onkeyup = function() {
+				var sc = el.getShortcode();
+				var text = '';
+				if ( sc ) {
+					text = 'Name: "' + sc.name + '"';
+					if ( sc.content )
+						text += ' Content: "' + sc.content + '"';
+
+					if ( sc.atts ) {
+						text += ' Attributes: [';
+						for ( i in sc.atts ) {
+							text += ' ' + i + ': "' + sc.atts[ i ] + '"';
+						}
+						text += ']';
+					}
+				}
+				document.getElementById( 'console' ).value = text;
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<h1>Parse it!</h1>
+	<form action="" method="post">
+		<p><input size="100" type="text" id="console" name="console" /></p>
+		<p>Move the Cursor through the Text</p>
+		<p><textarea rows="20" cols="50" id="canvas" name="place">This is a Text.
+It contains [shortcodes with="attributes"].
+
+Some of them can be [self_closed /], others can [contain]text[/contain].</textarea></p>
+	</form>
+</body>
+</head>
